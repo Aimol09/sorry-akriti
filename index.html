@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apologize With Love ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fdf2f8; /* Soft pink background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            color: #e11d48;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #fecdd3;
+            padding-bottom: 0.5rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .note-text {
+            font-size: 1.1rem;
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .copy-btn {
+            background-color: #fecdd3;
+            color: #e11d48;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+            align-self: flex-start;
+        }
+
+        .copy-btn:hover {
+            background-color: #fda4af;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            color: #6b7280;
+            margin-top: 2rem;
+            border-top: 1px solid #fce7f3;
+        }
+
+        /* Toast Notification for Copy */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #10b981;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 1rem;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Did you mess up? Let’s fix it with Love. ❤️</h1>
+        <p>Gusse ko pyar mein badalne ke liye perfect 'Sorry' messages.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="category">
+            <h2 class="category-title">Chhoti Galtiyon Ke Liye 🌸</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <p class="note-text" id="note1">"I am really sorry, babu. Mera irada tumhe hurt karne ka bilkul nahi tha. Please maaf kar do?"</p>
+                    <button class="copy-btn" onclick="copyText('note1')">Copy Message</button>
+                </div>
+                <div class="card">
+                    <p class="note-text" id="note2">"I hate it when we fight. Main apni galti maanta hoon. I love you, please smile now!"</p>
+                    <button class="copy-btn" onclick="copyText('note2')">Copy Message</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Jab Dil Zyada Dukhaya Ho 💔</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <p class="note-text" id="note3">"Main janta hoon meri wajah se tumhara dil dukha hai. I promise I'll try my best to never hurt you like this again. I am truly sorry."</p>
+                    <button class="copy-btn" onclick="copyText('note3')">Copy Message</button>
+                </div>
+                <div class="card">
+                    <p class="note-text" id="note4">"Tum meri zindagi ka sabse khoobsurat hissa ho. Meri duniya tumhare bina adhuri hai. Please mujhe ek aakhri mauka de do."</p>
+                    <button class="copy-btn" onclick="copyText('note4')">Copy Message</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Cute & Funny (Manane Ke Liye) 🧸</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <p class="note-text" id="note5">"I am sorry! Main ek number ka idiot hoon, but yaad rakhna... main *tumhara* idiot hoon. Maaf kar do na?"</p>
+                    <button class="copy-btn" onclick="copyText('note5')">Copy Message</button>
+                </div>
+                <div class="card">
+                    <p class="note-text" id="note6">"Mera dimag kabhi-kabhi Wi-Fi ki tarah disconnect ho jata hai. Par mera pyar tumhare liye lifetime unlimited plan hai. Sorry!"</p>
+                    <button class="copy-btn" onclick="copyText('note6')">Copy Message</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>A sincere apology has three parts: I am sorry, It was my fault, and How do I make it right? ❤️</p>
+    </footer>
+
+    <div id="toast">Message Copied! ✔️</div>
+
+    <script>
+        function copyText(elementId) {
+            // Get the text from the paragraph
+            var text = document.getElementById(elementId).innerText;
+            
+            // Remove the quotes at the beginning and end for a cleaner copy
+            text = text.replace(/^"|"$/g, '');
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(text).then(function() {
+                // Show toast notification
+                var toast = document.getElementById("toast");
+                toast.className = "show";
+                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
